@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+  --navbar: hsl(217, 54%, 11%);
+  --body: hsl(216, 50%, 16%);
+  --text: hsl(0, 0%, 100%);
+  --main: hsl(178, 100%, 50%);
+  --hover: hsl(215, 51%, 70%);
+  --shadow: hsl(215, 32%, 27%);
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--body);
+}
+a {
+  text-decoration: none;
+  color: var(--text);
+}
+a:hover {
+  color: var(--hover);
+}
+/* navbar */
+nav {
+  position: fixed;
+  top: 0;
+  background-color: var(--navbar);
+  width: 100vw;
+  height: 4vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 1rem;
+  z-index: 2;
+}
+.title h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+/* hamburger menu */
+.menuToggle {
+  position: relative;
+  top: 5px;
+}
+.menuToggle input {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  width: 2rem;
+  height: 35px;
+  top: -8px;
+  right: -3px;
+}
+.menuToggle span {
+  display: none;
+  position: relative;
+  background-color: var(--text);
+  width: 2rem;
+  height: 5px;
+  margin-bottom: 5px;
+  border-radius: 1rem;
+  transition: .5s;
+}
+.menuToggle span:nth-child(2) {
+  transform-origin: 0% 0%;
+  width: 1rem;
+}
+.menuToggle input:checked ~ span:nth-child(2) {
+  width: 2rem;
+  transform: rotate(45deg) translate(5px, -5px);
+}
+.menuToggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: rotate(-360deg) scale(1,5);
+}
+.menuToggle span:nth-child(4) {
+  transform-origin: 0% 100%;
+  width: 1rem;
+  margin-left: 1rem;
+}
+.menuToggle input:checked ~ span:nth-child(4) {
+  width: 2rem;
+  margin-left: 0;
+  transform: rotate(-45deg) translate(4px, 5px);
+}
+.menu li {
+  display: inline;
+  margin-right: 1rem;
+}
+.menu li a:hover {
+  border-bottom: 1px solid var(--main);
+}
+/* header */
+header {
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  height: 40vh;
+  margin-top: 100px;
+  box-sizing: border-box;
+  padding: 1rem;
+  background-color: var(--shadow);
+  z-index: 1;
+}
+header article {
+  margin-top: 100px;
+}
+header img {
+  position: absolute;
+  top: -200px;
+  right: -230px;
+  width: 800px;
+  height: auto;
+  z-index: -1;
+}
+header article p:nth-child(1) {
+  color: var(--main);
+}
+header article h1 {
+  font-weight: 700;
+  color: var(--text);
+  font-size: 5rem;
+}
+header article p:nth-child(3) {
+  color: var(--text);
+  font-size: 1.6rem;
+  width: 65%;
+}
+header article a {
+  display: block;
+  margin-top: 20px;
+  background-color: var(--main);
+  width: 150px;
+  padding: 10px;
+  text-align: center;
+  color: var(--navbar);
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 1rem;
+  transition: .5s;
+}
+header article a:hover {
+  background-color: var(--hover);
+  color: var(--shadow);
+  transform: scale(1.12);
+}
+/* project & services */
+.project, .services, footer {
+  position: relative;
+  margin-top: 50px;
+  width: 100vw;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+.project p, .services p {
+  color: var(--main);
+  text-align: center;
+}
+.project h2, .services h2 {
+  color: var(--text);
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.project span, .services span {
+  display: block;
+  width: 2.5px;
+  height: 50px;
+  background-color: var(--text);
+  margin: 10px auto;
+}
+.project span::after, .services span::after {
+  content: "";
+  display: block;
+  width: 2.5px;
+  height: 30px;
+  background-color: var(--main);
+  margin-left: 10px;
+}
+.project-content, .services-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.project-1, .services-1 {
+  overflow: hidden;
+  width: 48%;
+  margin-bottom: 50px;
+  background-color: var(--navbar);
+}
+.project-1 a {
+  display: block;
+  color: var(--main);
+  font-size: 1.5rem;
+  text-align: center;
+}
+.project-1 p {
+  margin: 10px 0 10px 0;
+  color: var(--text);
+}
+.project-1 img {
+  display: block;
+  width: 90%;
+  margin: auto;
+  transition: .5s;
+  transform: translate(0%, 20%);
+}
+.project-1 img:hover {
+  transform: none;
+}
+.project a:nth-child(5) {
+  color: var(--text);
+  display: block;
+  text-align: right;
+  margin: -30px 20px 0 0;
+  transition: .5s;
+}
+.project a:nth-child(5):hover {
+  color: var(--hover);
+}
+.services-1 {
+  box-sizing: border-box;
+  padding: 20px;
+  width: 45%;
+}
+.services-1 .fa-laptop, .services-1 .fa-bookmark, .services-1 .fa-edit, .services-1 .fa-paperclip {
+  color: var(--text);
+  border: 1px solid var(--main);
+  border-radius: 100%;
+  padding: 10px;
+}
+.services-1 h3 {
+  color: var(--text);
+  font-weight: bold;
+  margin: 10px 0 10px 0;
+}
+.services-1 p {
+  text-align: left;
+  color: var(--text);
+}
+footer {
+  padding: 2rem;
+  background-color: var(--navbar);
+}
+footer ul {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+}
+
+
+
+
+
+
+/* mobile */
+@media (max-width: 576px) {
+  /* navbar */
+  nav {
+    height: 8vh;
+  }
+  .menuToggle input, .menuToggle span {
+    display: block;
+  }
+  .menu {
+    position: absolute;
+    background-color: var(--shadow);
+    width: 100vw;
+    height: 100vh;
+    top: 35px;
+    right: -15px;
+    transition: .5s;
+    transform: translate(0%, -115%);
+  }
+  .menu li {
+    display: block;
+    text-align: center;
+    margin: 50px auto;
+  }
+  .menuToggle input:checked ~ .menu {
+    transform: none;
+  }
+  /* header */
+  header {
+    height: 60vh;
+    margin-top: 50px;
+  }
+  header img {
+    width: 400px;
+    top: -100px;
+    right: -115px;
+  }
+  header article {
+    margin-top: 50px;
+    margin-left: -10px;
+  }
+  header article p:nth-child(1) {
+    font-size: .7rem;
+  }
+  header article h1 {
+    font-size: 1.6rem;
+  }
+  header article p:nth-child(3) {
+    font-size: 1rem;
+    width: 55%;
+  }
+  header article a {
+    width: 80px;
+    font-size: .7rem;
+  }
+  /* project */
+  .project-content, .services-content {
+    flex-wrap: wrap;
+  }
+  .project-1, .services-1 {
+    width: 100%;
+  }
+  /* footer */
+  footer ul {
+    width: 100%;
+  }
+}
