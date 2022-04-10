@@ -100,7 +100,7 @@ header {
   margin-top: 100px;
   box-sizing: border-box;
   padding: 1rem;
-  background-color: blue;
+  background-color:yellow;
   z-index: 1;
 }
 header article {
